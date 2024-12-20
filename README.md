@@ -1,7 +1,7 @@
 [![Discord](https://img.shields.io/discord/1093598557480685578?label=Discord)](https://discord.gg/dCPnHaYNrm)
 [![Documentation](https://img.shields.io/badge/GitBook-Docu-lightblue)](https://goap.crashkonijn.com/)
 [![openupm](https://img.shields.io/npm/v/com.crashkonijn.goap?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.crashkonijn.goap/)
-[![Asset Store](https://img.shields.io/badge/Asset%20Store-v2.1.14-blue)](https://assetstore.unity.com/packages/slug/252687)
+[![Asset Store](https://img.shields.io/badge/Asset%20Store-v3.0.24-blue)](https://assetstore.unity.com/packages/slug/252687)
 [![CodeFactor](https://www.codefactor.io/repository/github/crashkonijn/goap/badge)](https://www.codefactor.io/repository/github/crashkonijn/goap)
 ![test-status](https://github.com/crashkonijn/GOAP/actions/workflows/main.yml/badge.svg?branch=master)
 ![GitHub](https://img.shields.io/github/license/crashkonijn/GOAP)
@@ -30,7 +30,7 @@ Integrate GOAP into your Unity project using one of the following methods:
 - **Unity Package Manager**:
 Add the package via the package manager using this URL:
 ```
-https://github.com/crashkonijn/GOAP.git?path=/Package#2.1.18
+https://github.com/crashkonijn/GOAP.git?path=/Package#3.0.27
 ```
 
 - **OpenUPM**:
@@ -47,6 +47,9 @@ Visualize your GOAP nodes and their interactions with our intuitive Node Viewer.
 ## Documentation and Examples
 - **Documentation**: Access comprehensive guides and API references in the `Package/Documentation` folder or visit [goap.crashkonijn.com](https://goap.crashkonijn.com/).
 - **Demos**: Explore practical implementations in the Demo folder. Simply clone this repository and open the Demo project in Unity to get started.
+
+## Sponsoring
+If you'd like to sponsor the project, this can be done through my [GitHub Sponsor](https://github.com/sponsors/crashkonijn) page or by buying the [Support Edition](https://assetstore.unity.com/packages/slug/298995) on the Unity Asset Store.
 
 ## References
 - **[YouTube tutorials](https://www.youtube.com/playlist?list=PLZWmMt_TbeYeatHa9hntDPu4zGEBAFffn)** on how to use the library.

@@ -1,10 +1,11 @@
-﻿using CrashKonijn.Goap.Classes;
-using CrashKonijn.Goap.Editor.Elements;
-using CrashKonijn.Goap.Interfaces;
+using System.Linq;
+using System.Reflection;
+using CrashKonijn.Agent.Core;
+using CrashKonijn.Goap.Runtime;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace CrashKonijn.Goap.Editor.Drawers
+namespace CrashKonijn.Goap.Editor
 {
     public class ObjectDrawer : VisualElement
     {
@@ -12,33 +13,59 @@ namespace CrashKonijn.Goap.Editor.Drawers
         {
             if (obj is null)
                 return;
-            
+
             var properties = obj.GetType().GetProperties();
 
-            foreach (var property in properties)
+            var label = new Label();
+            label.text = this.GetLabelText(properties, obj);
+            this.Add(label);
+
+            this.schedule.Execute(() =>
             {
-                var value = property.GetValue(obj);
-                
-                this.Add(new Label($"{property.Name}: {this.GetValueString(value)}"));
-            }
+                label.text = this.GetLabelText(properties, obj);
+            }).Every(33);
+        }
+
+        private string GetLabelText(PropertyInfo[] properties, object obj)
+        {
+            return string.Join("\n", properties.Select(x =>
+            {
+                var value = x.GetValue(obj);
+                return $"{x.Name}: {this.GetValueString(value)}";
+            }));
         }
 
         private string GetValueString(object value)
         {
-            if (value is null)
+            if (value == null)
                 return "null";
-            
+
             if (value is TransformTarget transformTarget)
+            {
+                if (transformTarget.Transform == null)
+                    return "null";
+
                 return transformTarget.Transform.name;
-            
+            }
+
             if (value is PositionTarget positionTarget)
-                return positionTarget.Position.ToString();
-            
+                return positionTarget.GetValidPosition().ToString();
+
             if (value is MonoBehaviour monoBehaviour)
+            {
+                if (monoBehaviour == null)
+                    return "null";
+
                 return monoBehaviour.name;
-            
+            }
+
             if (value is ScriptableObject scriptableObject)
+            {
+                if (scriptableObject == null)
+                    return "null";
+
                 return scriptableObject.name;
+            }
 
             return value.ToString();
         }
