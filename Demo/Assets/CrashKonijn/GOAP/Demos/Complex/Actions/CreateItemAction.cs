@@ -35,7 +35,6 @@ namespace CrashKonijn.Goap.Demos.Complex.Actions
 
         public override void BeforePerform(IMonoAgent agent, Data data)
         {
-            this.RemoveRequiredResources(data);
         }
 
         public override IActionRunState Perform(IMonoAgent agent, Data data, IActionContext context)
@@ -54,6 +53,7 @@ namespace CrashKonijn.Goap.Demos.Complex.Actions
 
         public override void Complete(IMonoAgent agent, Data data)
         {
+            this.RemoveRequiredResources(data);
             var item = this.itemFactory.Instantiate<TCreatable>();
             item.transform.position = this.GetRandomPosition(agent);
         }
