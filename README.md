@@ -51,6 +51,8 @@ Visualize your GOAP nodes and their interactions with our intuitive Node Viewer.
 ## Showcase
 - [Basher Beatdown](https://www.youtube.com/watch?v=3h9e8gTUqOo)
 - [Toy Shop Simulator](https://store.steampowered.com/app/3163790/Toy_Shop_Simulator/)
+- [Earthlings](https://store.steampowered.com/app/3508530/Earthlings/)
+- [External](https://store.steampowered.com/app/3299010/External/)
 
 ## Sponsoring
 If you'd like to sponsor the project, this can be done through my [GitHub Sponsor](https://github.com/sponsors/crashkonijn) page or by buying the [Support Edition](https://assetstore.unity.com/packages/slug/298995) on the Unity Asset Store.
